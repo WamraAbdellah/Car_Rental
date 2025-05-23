@@ -1,0 +1,82 @@
+.car-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F8F8F8;
+    min-height: 91vh;
+    padding: 20px;
+  }
+  
+  .car-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .car-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .car-image {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profile {
+    height: 130px;
+    width: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .car-details {
+    padding-left: 20px;
+  }
+  
+  .car-title {
+    cursor: pointer;
+    color: #108ee9;
+    margin-bottom: 5px;
+  }
+  
+  .car-description {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .car-info {
+    font-size: 14px;
+  }
+  
+  /* Intégration du formulaire dans le cadre blanc */
+  .dashboard-filter {
+    width: 100%;
+    padding-top: 20px;
+  }
+  
+  .filter-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .filter-select-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filterBtn {
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,96 @@
+.custom-navbar { 
+  background-color: #003973; // Couleur principale
+  display: flex;
+  justify-content: space-between; // Espace égal entre le titre et les liens
+  align-items: center; // Centre tous les éléments verticalement
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Ombre subtile
+  border-bottom: 2px solid #0073e6; // Ligne de contraste
+  height: 70px; // Hauteur fixe pour garantir un alignement vertical cohérent
+
+  .navbar-title {
+    flex-shrink: 0; // Empêche le rétrécissement du titre
+    > a {
+      color: #ffffff !important;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      white-space: nowrap; // Empêche le titre de se casser sur plusieurs lignes
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #ffd700; // Couleur dorée au survol
+      }
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center; // Centre verticalement les liens
+    gap: 20px; // Espace entre les liens
+    flex-wrap: nowrap; // Évite que les liens se cassent sur plusieurs lignes
+
+    a {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 8px 12px; // Ajout de padding pour agrandir la zone cliquable
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: #0073e6; // Fond bleu clair au survol
+        color: #ffffff;
+      }
+
+      &.active {
+        font-weight: bold;
+        border-bottom: 2px solid #ffd700; // Indicateur de page active
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .custom-navbar {
+    flex-direction: column; // Colonne pour petits écrans
+    align-items: center; // Centre les éléments horizontalement
+    height: auto; // Permet à la hauteur de s’ajuster
+    padding: 15px;
+
+    .navbar-title {
+      text-align: center;
+      margin-bottom: 10px; // Ajoute de l’espace entre le titre et les liens
+    }
+
+    .nav-links {
+      gap: 15px; // Réduit l’espace entre les liens sur les petits écrans
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-navbar {
+    flex-direction: column;
+    align-items: stretch; // Étend les éléments sur toute la largeur
+    padding: 15px;
+
+    .navbar-title {
+      text-align: center;
+      margin-bottom: 10px; // Ajoute de l’espace entre le titre et les liens
+    }
+
+    .nav-links {
+      width: 100%; // Les liens occupent toute la largeur
+      justify-content: center;
+
+      a {
+        text-align: center; // Texte centré pour chaque lien
+        width: auto; // Les liens prennent leur largeur minimale
+      }
+    }
+  }
+}

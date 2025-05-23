@@ -1,0 +1,51 @@
+<div class="car-container" *ngIf="car">
+  <div class="car-card">
+    <div nz-row class="car-row">
+      <div nz-col nzSpan="8" class="car-image">
+        <img class="profile" [src]="processedImage" alt="profile"/>
+      </div>
+      <div nz-col nzSpan="16" class="car-details">
+        <h2 class="car-title">
+          {{car.brand}} - {{car.name}}
+        </h2>
+        <p class="car-description">{{car.description}}</p>
+        <h5 class="car-info">
+          Price: <b>${{car.price}}</b> - 
+          Color: <b>{{car.color}}</b> - 
+          Transmission: <b>{{car.transmission}}</b> - 
+          Type: <b>{{car.type}}</b> - 
+          Year: <b>{{car.year | date: 'yyyy'}}</b>
+        </h5>
+      </div>
+    </div>
+
+    <!-- Formulaire à l'intérieur du cadre blanc -->
+    <div class="dashboard-filter">
+      <form [formGroup]="validateForm">
+        <div class="filter-grid">
+          <div class="filter-select-dropdown">
+            <nz-form-item>
+              <nz-form-label nzFor="From Date">From Date</nz-form-label>
+              <nz-form-control>
+                <nz-date-picker formControlName="fromDate" nzPlaceHolder="From Date" [nzFormat]="dateFormat"></nz-date-picker>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div class="filter-select-dropdown">
+            <nz-form-item>
+              <nz-form-label nzFor="To Date">To Date</nz-form-label>
+              <nz-form-control>
+                <nz-date-picker formControlName="toDate" nzPlaceHolder="To Date" [nzFormat]="dateFormat"></nz-date-picker>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div class="filter-select-dropdown">
+            <button class="filterBtn" nz-button nzType="primary" (click)="bookCar(validateForm.value)">
+              Book Car
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

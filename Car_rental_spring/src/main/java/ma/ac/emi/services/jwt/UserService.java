@@ -1,0 +1,8 @@
+package ma.ac.emi.services.jwt;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+public interface UserService {
+
+    UserDetailsService userDetailsService();
+}
